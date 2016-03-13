@@ -57,6 +57,20 @@ class Users extends CI_Controller{
         $this->user_model->delete_users($id);
     }
 */
+
+    public function register(){
+
+        $data['main_view'] = 'users/register_view';
+        $this->load->view('layouts/main', $data);
+
+
+
+    }
+
+
+
+
+
     public function login(){
 
       $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]');
