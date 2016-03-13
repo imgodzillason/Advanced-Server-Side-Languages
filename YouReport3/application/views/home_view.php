@@ -6,6 +6,14 @@
 
     <?php endif; ?>
 
+
+    <?php if($this->session->flashdata('user_registered')): ?>
+
+        <?php echo $this->session->flashdata('user_registered'); ?>
+
+    <?php endif; ?>
+
+
 </p>
 
 <p class = "bg-danger">
