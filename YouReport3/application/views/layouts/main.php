@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ;?>assets/css/style.css">
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 </head>
@@ -25,8 +26,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="<?php echo base_url();?>/users/register">Register <span class="sr-only">(current)</span></a></li>
+                <li><a href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a></li>
+                <li ><a href="<?php echo base_url();?>/users/register">Register <span class="sr-only">(current)</span></a></li>
 
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

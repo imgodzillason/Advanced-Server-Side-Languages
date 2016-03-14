@@ -1,0 +1,33 @@
+.navbar{
+    background:#006633;
+}
+
+.navbar-default .navbar-nav > li a {
+    color:#FFFFFF;
+}
+
+.navbar-default .navbar-nav > li a:hover{
+    background:#FF5A36;
+    color:#FFFFFF;
+}
+
+.form-group input[type=submit]{
+    background: #006633;
+}
+
+.form-group input[type=submit]:hover{
+    background: #FF5A36;
+}
+
+.navbar-header .navbar-brand{
+    color:#FFFFFF;
+}
+
+.navbar-header .navbar-brand:hover{
+    color:#FFFFFF;
+}
+
+.container{
+    background:#660033;
+    color:#FFFFFF;
+}

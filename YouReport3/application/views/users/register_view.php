@@ -2,7 +2,7 @@
 
     <?php $attributes = array('id'=>'register_form', 'class'=>'form_horizontal'); ?>
 
-    <?php echo validation_errors("<p class='bg-danger'>"); ?>
+    <?php echo validation_errors("<p class='bg-danger'>" . "<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>"); ?>
 
     <?php echo form_open('users/register', $attributes); ?>
 
@@ -81,12 +81,6 @@
         <?php echo form_input($data); ?>
 
     </div>
-
-
-
-
-
-
 
 
     <div class = "form-group">
