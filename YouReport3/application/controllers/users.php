@@ -58,7 +58,7 @@ class Users extends CI_Controller{
     }
 */
 
-    public function register(){
+    public function register(){ //form validation rules for forms
 
         $this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[3]');
@@ -68,14 +68,14 @@ class Users extends CI_Controller{
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
 
-        if($this->form_validation->run() == FALSE){
+        if($this->form_validation->run() == FALSE){ //redirect if info is not entered correctly, show errors
 
            $data['main_view'] = 'users/register_view';
            $this->load->view('layouts/main', $data);
 
         } else{
 
-            If($this->user_model->create_user()){
+            If($this->user_model->create_user()){ //notify user they have registered
 
                 $this->session->set_flashdata('user_registered', 'User has been registered. Please log in.');
 
@@ -95,10 +95,7 @@ class Users extends CI_Controller{
     }
 
 
-
-
-
-    public function login(){
+    public function login(){ //set form validation rules for login form
 
       $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]');
       $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
@@ -107,13 +104,13 @@ class Users extends CI_Controller{
 
         if($this->form_validation->run() == FALSE){
 
-            $data = array(
+            $data = array( //show form validation errors
 
                 'errors' => validation_errors()
 
             );
 
-            $this->session->set_flashdata($data);
+            $this->session->set_flashdata($data); //redirect home if login is successul
 
             redirect('home');
 
@@ -134,17 +131,17 @@ class Users extends CI_Controller{
 
                 );
 
-            $this->session->set_userdata($user_data);
+            $this->session->set_userdata($user_data); //begin user session
 
-            $this->session->set_flashdata('login_success', 'You are now logged in');
+            $this->session->set_flashdata('login_success', 'You are now logged in'); //notify user they are logged in
 
-            $data['main_view'] = "admin_view";
+            $data['main_view'] = "admin_view"; //load admin view
 
             $this->load->view('layouts/main', $data);
 
             //redirect('home/index');
 
-            } else{
+            } else{ //notify of login failure
 
                 $this->session->flashdata('login_failed', 'Sorry, you are not logged in');
                 redirect('home/index');
@@ -157,7 +154,7 @@ class Users extends CI_Controller{
 
     }
 
-    public function logout(){
+    public function logout(){ //session destroy upon logout
 
         $this->session->sess_destroy();
         redirect('home/index');

@@ -4,14 +4,14 @@
 
     <?php echo validation_errors("<p class='bg-danger'>" . "<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>"); ?>
 
-    <?php echo form_open('users/register', $attributes); ?>
+    <?php echo form_open('users/register', $attributes); ?> <!--Open form-->
 
     <div class = "form-group">
 
-        <?php echo form_label('First Name'); ?>
+        <?php echo form_label('First Name'); ?> <!--Form Label-->
 
 
-        <?php
+        <?php //set array for first name info
 
         $data = array(
             'class'=> 'form-control',
@@ -27,10 +27,10 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Last Name'); ?>
+        <?php echo form_label('Last Name'); ?><!--Form Label-->
 
 
-        <?php
+        <?php //set array for last name info
 
         $data = array(
             'class'=> 'form-control',
@@ -46,10 +46,10 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Email'); ?>
+        <?php echo form_label('Email'); ?> <!--Form Label-->
 
 
-        <?php
+        <?php //set array for email info
 
         $data = array(
             'class'=> 'form-control',
@@ -65,12 +65,12 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Phone Number'); ?>
+        <?php echo form_label('Phone Number'); ?><!--Form Label-->
 
 
         <?php
 
-        $data = array(
+        $data = array( //set array for phone number info
             'class'=> 'form-control',
             'name'=> 'phone_number',
             'placeholder'=> 'Enter Phone Number'
@@ -85,12 +85,12 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Username'); ?>
+        <?php echo form_label('Username'); ?> <!--Form Label-->
 
 
         <?php
 
-        $data = array(
+        $data = array( //set array for username
             'class'=> 'form-control',
             'name'=> 'username',
             'placeholder'=> 'Enter Username'
@@ -104,12 +104,12 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Password'); ?>
+        <?php echo form_label('Password'); ?><!--Form Label-->
 
 
         <?php
 
-        $data = array(
+        $data = array( //set array for password
             'class'=> 'form-control',
             'name'=> 'password',
             'placeholder'=> 'Enter Password'
@@ -123,12 +123,12 @@
 
     <div class = "form-group">
 
-        <?php echo form_label('Confirm Password'); ?>
+        <?php echo form_label('Confirm Password'); ?><!--Form Label-->
 
 
         <?php
 
-        $data = array(
+        $data = array( //set array for confirmation of password
             'class'=> 'form-control',
             'name'=> 'confirm_password',
             'placeholder'=> 'Confirm Password'
@@ -145,7 +145,7 @@
 
         <?php
 
-        $data = array(
+        $data = array( //set array for register button
             'class'=> 'btn btn-primary',
             'name'=> 'submit',
             'value'=> 'Register'
@@ -158,4 +158,4 @@
     </div>
 
 
-    <?php echo form_close(); ?>
+    <?php echo form_close(); ?> <!--Close out form-->

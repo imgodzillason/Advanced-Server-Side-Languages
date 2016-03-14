@@ -6,7 +6,7 @@
  * Time: 1:10 PM
  */
 
-class Home extends CI_Controller{
+class Home extends CI_Controller{ //set main view to home page
 
     public function index(){
 

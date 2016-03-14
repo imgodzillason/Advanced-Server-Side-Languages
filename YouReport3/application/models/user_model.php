@@ -58,13 +58,13 @@ class User_model extends CI_Model {
 
     }*/
 
-    public function create_user(){
+    public function create_user(){ //create user
 
         $options = ['cost' => 12]; //slow down attempts for hackers
 
-        $encrypted_pass = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
+        $encrypted_pass = password_hash($this->input->post('password'), PASSWORD_BCRYPT); //hash password
 
-        $data = array(
+        $data = array( //insert info into database
 
             'first_name'        => $this->input->post('first_name'),
             'last_name'         => $this->input->post('last_name'),
@@ -81,7 +81,7 @@ class User_model extends CI_Model {
 
     }
 
-    public function login_user($username, $password){
+    public function login_user($username, $password){ //check database for username and password
 
         $this->db->where('username', $username);
 
