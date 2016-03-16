@@ -122,7 +122,7 @@ class Users extends CI_Controller{
             $user_id = $this->user_model->login_user($username, $password);
 
             if($user_id){
-
+                    //array for sessions
                 $user_data = array(
 
                     'user_id' => $user_id,

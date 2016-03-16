@@ -1,4 +1,4 @@
-<p class = "bg-success">
+<p class = "bg-success"> <!--Success messages-->
 
     <?php if($this->session->flashdata('login_success')): ?>
 
@@ -16,7 +16,13 @@
 
 </p>
 
-<p class = "bg-danger">
+<p class = "bg-danger"> <!--Fail messages-->
+
+    <?php if($this->session->flashdata('no_access')): ?>
+
+        <?php echo $this->session->flashdata('no_access'); ?>
+
+    <?php endif; ?>
 
 
     <?php if($this->session->flashdata('login_failed')): ?>
