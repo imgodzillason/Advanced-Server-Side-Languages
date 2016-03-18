@@ -43,7 +43,7 @@ class Reports extends CI_Controller{
 
         if($this->form_validation->run() == FALSE){
 
-            $data['main_view'] = 'reports/create_report';
+            $data['main_view'] = 'reports/edit_report';
             $this->load->view('layouts/main', $data);
 
         } else{
@@ -57,9 +57,48 @@ class Reports extends CI_Controller{
             );
 
 
-            if($this->reports_model->create_report($data)){ //check for data and notify user report has been created
+            if($this->reports_model->edit_report($data)){ //check for data and notify user report has been created
 
-                $this->session->set_flashdata('report_created', 'Your report has been created.');
+                $this->session->set_flashdata('report_updated', 'Your report has been updated.');
+
+                redirect('reports/index'); //redirect to index
+
+
+
+            }
+
+        }
+
+
+    }
+
+
+    public function edit($report_id){ //create edit function for report editing
+
+        $this->form_validation->set_rules('report_name', 'Report Name', 'trim|required'); //set up validation rules for report name
+        $this->form_validation->set_rules('report_body', 'Description', 'trim|required'); //set up validation rules for report body
+
+        if($this->form_validation->run() == FALSE){
+
+            $data['report_data'] = $this->reports_model->get_reports_info($report_id);
+
+            $data['main_view'] = 'reports/edit_report';
+            $this->load->view('layouts/main', $data);
+
+        } else{
+
+            $data = array( //set array to pull in data
+
+                'report_user_id' => $this->session->userdata('user_id'),
+                'report_name' => $this->input->post('report_name'),
+                'report_body' => $this->input->post('report_body')
+
+            );
+
+
+            if($this->reports_model->edit_report($report_id, $data)){ //check for data and notify user report has been created
+
+                $this->session->set_flashdata('report_updated', 'Your report has been updated.');
 
                 redirect('reports/index'); //redirect to index
 

@@ -1,10 +1,10 @@
-<h2>Create Report</h2> <!--Create report form-->
+<h2>Edit Report</h2> <!--Create report form-->
 
 <?php $attributes = array('id'=>'create_form', 'class'=>'form_horizontal'); ?>
 
 <?php echo validation_errors("<p class='bg-danger'>" . "<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>"); ?>
 
-<?php echo form_open('reports/create', $attributes); ?> <!--Open form-->
+<?php echo form_open('reports/edit/'. $report_data->id. '', $attributes); ?> <!--Open form and pull id-->
 
 <div class = "form-group">
 
@@ -16,7 +16,7 @@
     $data = array(
         'class'=> 'form-control',
         'name'=> 'report_name',
-        'placeholder'=> 'Enter Report Name'
+        'value'=> $report_data->report_name //get information for name
     );
 
     ?>
@@ -34,7 +34,8 @@
 
     $data = array(
         'class'=> 'form-control',
-        'name'=> 'report_body'
+        'name'=> 'report_body',
+        'value' => $report_data->report_body //get information for body
 
     );
 
@@ -51,7 +52,7 @@
     $data = array( //set array for register button
         'class'=> 'btn btn-primary',
         'name'=> 'submit',
-        'value'=> 'Submit'
+        'value'=> 'Update'
     );
 
     ?>

@@ -17,7 +17,7 @@
 
     <li class="list-group-item"><a href="">Create Report</a></li>
 
-    <li class="list-group-item"><a href="">Edit Report</a></li>
+    <li class="list-group-item"><a href="<?php echo base_url();?>reports/edit/<?php echo $report_data->id; ?>">Edit Report</a></li>
 
     <li class="list-group-item"><a href="">Delete Report</a></li>
 
