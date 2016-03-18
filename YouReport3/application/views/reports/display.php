@@ -1,6 +1,12 @@
 <div class="col-xs-9">
 
-<h1>Report Name</h1>
+<h1>Report Name: <?php echo $report_data->report_name; ?></h1> <!--Pull in report name from database-->
+<p>Date Created: <?php echo $report_data->date_created; ?></p> <!--Pull in date created from database-->
+
+<h3>Description</h3>
+
+<p><?php echo $report_data->report_body ?></p><!--Pull in text body created from database-->
+
 
 </div>
 
@@ -9,7 +15,7 @@
 
     <h4>Report Actions</h4>
 
-    <!--<li class="list-group-item"><a href="<?php echo base_url(); ?>/tasks/create/<?php echo $reports->id; ?>">Create Report</a></li>-->
+    <li class="list-group-item"><a href="">Create Report</a></li>
 
     <li class="list-group-item"><a href="">Edit Report</a></li>
 

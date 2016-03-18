@@ -7,6 +7,15 @@
  */
 
 class Reports_model extends CI_Model{
+    //call database id in reports table...linked to reports.php display function
+    public function get_report($id){
+
+        $this->db->where('id', $id);
+
+        $query = $this->db->get('reports'); //query report table
+
+        return $query->row();
+    }
 
     public function get_reports(){
 
@@ -14,6 +23,14 @@ class Reports_model extends CI_Model{
 
         return $query->result();
 
+
+    }
+
+    public function create_report($data){ //create report method
+
+        $insert_query = $this->db->insert('reports', $data); //insert into database
+
+        return $insert_query;
 
     }
 
