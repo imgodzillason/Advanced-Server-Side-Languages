@@ -60,7 +60,13 @@ li{
     list-style-type: none;
 }
 
-td a{
+td a, a:hover{
     font-weight:600;
     font-size:1.1em;
+    color:white;
+    text-decoration:none;
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #006633;
 }

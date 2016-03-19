@@ -39,6 +39,7 @@
     <tr>
         <th>Report Name</th>
         <th>Report Details</th>
+        <th>Date Created</th>
         <th>Delete</th>
     </tr>
     </thead>
@@ -50,6 +51,7 @@
 <!--link to report id-->
                 <?php echo "<td><a href='". base_url() . "reports/display/". $reports->id ."'>" . $reports->report_name . "</a></td>"; ?> <!--get report name-->
                 <?php echo "<td>" . $reports->report_body . "</td>"; ?> <!--get report body/details-->
+                <?php echo "<td>" . $reports->date_created . "</td>"; ?>
 
                 <td><a class="btn btn-danger" href="<?php echo base_url();?>reports/delete/<?php echo $reports->id ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
 
