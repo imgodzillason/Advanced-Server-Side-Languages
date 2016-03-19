@@ -15,11 +15,11 @@
 
     <h4>Report Actions</h4>
 
-    <li class="list-group-item"><a href="">Create Report</a></li>
+    <li class="list-group-item"><a href="<?php echo base_url();?>reports/create">Create Report</a></li>
 
     <li class="list-group-item"><a href="<?php echo base_url();?>reports/edit/<?php echo $report_data->id; ?>">Edit Report</a></li>
 
-    <li class="list-group-item"><a href="">Delete Report</a></li>
+    <li class="list-group-item"><a href="<?php echo base_url();?>reports/delete/<?php echo $report_data->id; ?>">Delete Report</a></li>
 
 </ul>
 </div>

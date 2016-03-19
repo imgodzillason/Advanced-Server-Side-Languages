@@ -43,7 +43,7 @@ class Reports extends CI_Controller{
 
         if($this->form_validation->run() == FALSE){
 
-            $data['main_view'] = 'reports/edit_report';
+            $data['main_view'] = 'reports/create_report';
             $this->load->view('layouts/main', $data);
 
         } else{
@@ -108,6 +108,17 @@ class Reports extends CI_Controller{
 
         }
 
+
+    }
+
+
+    public function delete($report_id){
+
+        $this->reports_model->delete_report($report_id);
+
+        $this->session->set_flashdata('report_deleted', 'Your report has been deleted.');
+
+        redirect('reports/index'); //redirect to index
 
     }
 

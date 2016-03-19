@@ -44,6 +44,13 @@ class Reports_model extends CI_Model{
 
     }
 
+    public function delete_report($report_id){ //delete project method to call into reports.php
+
+        $this->db->where('id', $report_id);
+        $this->db->delete('reports');
+
+    }
+
     public function get_reports_info($report_id){ //get report information for editing
 
         $this->db->where('id', $report_id); //search database and assign id to variable
