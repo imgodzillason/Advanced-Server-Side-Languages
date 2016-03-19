@@ -33,12 +33,13 @@
 
 <table class="table table-hover">
 
-    <a class="btn btn-primary pull-right" href="<?php echo base_url();?>reports/create">Create Report</a>
+    <a class="btn btn-primary pull-right create" href="<?php echo base_url();?>reports/create">Create Report</a>
 
     <thead>
     <tr>
         <th>Report Name</th>
         <th>Report Details</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>

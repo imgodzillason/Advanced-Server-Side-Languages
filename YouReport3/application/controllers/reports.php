@@ -57,9 +57,9 @@ class Reports extends CI_Controller{
             );
 
 
-            if($this->reports_model->edit_report($data)){ //check for data and notify user report has been created
+            if($this->reports_model->create_report($data)){ //check for data and notify user report has been created
 
-                $this->session->set_flashdata('report_updated', 'Your report has been updated.');
+                $this->session->set_flashdata('report_created', "<span class=\"glyphicon glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>" . 'Your report has been created.');
 
                 redirect('reports/index'); //redirect to index
 
@@ -98,12 +98,9 @@ class Reports extends CI_Controller{
 
             if($this->reports_model->edit_report($report_id, $data)){ //check for data and notify user report has been created
 
-                $this->session->set_flashdata('report_updated', 'Your report has been updated.');
+                $this->session->set_flashdata('report_updated', '<span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>' . 'Your report has been updated.');
 
                 redirect('reports/index'); //redirect to index
-
-
-
             }
 
         }
@@ -116,7 +113,7 @@ class Reports extends CI_Controller{
 
         $this->reports_model->delete_report($report_id);
 
-        $this->session->set_flashdata('report_deleted', 'Your report has been deleted.');
+        $this->session->set_flashdata('report_deleted', '<span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>' . 'Your report has been deleted.');
 
         redirect('reports/index'); //redirect to index
 

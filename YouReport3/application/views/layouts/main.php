@@ -27,12 +27,23 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="<?php echo base_url();?>reports">Reports <span class="sr-only">(current)</span></a></li>
+                <li><a href="<?php echo base_url();?>">Home <span class="sr-only"></span></a></li>
+                <li><a href="<?php echo base_url();?>reports">Reports <span class="sr-only"></span></a></li>
                 <?php if(!$this->session->userdata('logged_in')){ ?>
-                    <li ><a href="<?php echo base_url();?>users/register">Register <span class="sr-only">(current)</span></a></li>
+                    <li ><a href="<?php echo base_url();?>users/register">Register <span class="sr-only"></span></a></li>
                 <?php } ?>
             </ul>
+
+            <?php if($this->session->userdata('logged_in')): ?> <!--Check for user to be logged in before showing logout button-->
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="<?php echo base_url() ?>users/logout">Logout</a></li>
+
+
+            </ul>
+
+            <?php endif;?>
 
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -48,10 +59,7 @@
 
     <div class = "col-xs-9">
 
-
         <?php $this->load->view($main_view); ?>
-
-
 
     </div>
 

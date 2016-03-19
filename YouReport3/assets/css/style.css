@@ -1,3 +1,5 @@
+/**Navigation**/
+
 .navbar{
     background:#006633;
 }
@@ -11,14 +13,6 @@
     color:#FFFFFF;
 }
 
-.form-group input[type=submit]{
-    background: #006633;
-}
-
-.form-group input[type=submit]:hover{
-    background: #FF5A36;
-}
-
 .navbar-header .navbar-brand{
     color:#FFFFFF;
 }
@@ -27,6 +21,18 @@
     color:#FFFFFF;
 }
 
+/**Forms**/
+
+.form-group input[type=submit]{
+    background: #006633;
+}
+
+.form-group input[type=submit]:hover{
+    background: #FF5A36;
+}
+
+/**Main Styles**/
+
 .container{
     background:#660033;
     color:#FFFFFF;
@@ -34,4 +40,27 @@
 
 .list-group-item{
     color:#000000;
+}
+
+.bg-success p{
+    background-color:#006400;
+    color:#FFFFFF;
+}
+
+.glyphicon-exclamation-sign, .glyphicon-ok, .glyphicon-hand-right{
+    margin-right:2%;
+    margin-left:1%;
+}
+
+.create{
+    margin-bottom:3%;
+}
+
+li{
+    list-style-type: none;
+}
+
+td a{
+    font-weight:600;
+    font-size:1.1em;
 }
