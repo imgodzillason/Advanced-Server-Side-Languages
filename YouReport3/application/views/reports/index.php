@@ -47,7 +47,7 @@
 
         <?php foreach($reports as $reports): ?> <!--loop through reports in database-->
 
-            <tr>
+            <tr class="'report-table">
 <!--link to report id-->
                 <?php echo "<td><a href='". base_url() . "reports/display/". $reports->id ."'>" . $reports->report_name . "</a></td>"; ?> <!--get report name-->
                 <?php echo "<td>" . $reports->report_body . "</td>"; ?> <!--get report body/details-->
