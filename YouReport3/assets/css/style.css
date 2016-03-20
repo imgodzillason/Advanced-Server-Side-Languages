@@ -21,6 +21,11 @@
     color:#FFFFFF;
 }
 
+.navbar-brand{
+    margin:0;
+    padding:0;
+}
+
 /**Forms**/
 
 .form-group input[type=submit]{
