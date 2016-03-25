@@ -82,6 +82,26 @@
 
     </div>
 
+ <div class = "form-group">
+
+     <?php echo form_label('Mobile Carrier'); ?><br/><!--Form Label-->
+
+     <?php
+
+     $data = array(
+
+         
+         'None'          => 'None',
+         '@txt.att.net'          => 'AT&T',
+         '@vtext.com'      => 'Verizon',
+         '@messaging.sprintpcs.com'       => 'Sprint',
+         '@tmomail.net'      => 'T-Mobile'
+     );
+     ?>
+     
+    <!-- Add bootstrap class form-control -->
+     <?php echo form_dropdown('mobile_carrier', $data, 'None','class="form-control"'); ?>
+
 
     <div class = "form-group">
 

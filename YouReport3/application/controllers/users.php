@@ -64,17 +64,21 @@ class Users extends CI_Controller{
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[3]|valid_email');
         $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|max_length[10]');
+        $this->form_validation->set_rules('mobile_carrier', 'Mobile Carrier', 'required');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
 
         if($this->form_validation->run() == FALSE){ //redirect if info is not entered correctly, show errors
 
+          
+
            $data['main_view'] = 'users/register_view';
            $this->load->view('layouts/main', $data);
 
         } else{
 
+           
             If($this->user_model->create_user()){ //notify user they have registered
 
                 $this->session->set_flashdata('user_registered', 'User has been registered. Please log in.');
@@ -82,16 +86,8 @@ class Users extends CI_Controller{
                 redirect('home/index');
             } else{
 
-
-
-
             }
-
-
-
         }
-
-
     }
 
 
@@ -148,8 +144,6 @@ class Users extends CI_Controller{
 
             }
 
-
-
         }
 
     }
@@ -160,5 +154,6 @@ class Users extends CI_Controller{
         redirect('home/index');
 
     }
+    
 
 }

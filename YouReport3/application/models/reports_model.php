@@ -64,6 +64,18 @@ class Reports_model extends CI_Model{
 
 
 
+    /*new function call for user details */
+
+    public function show_user_details($user_id){
+
+        $this->db->where('id', $user_id); //search database and assign id to variable
+
+        $get_data = $this->db->get('users'); //get data set to get info from reports table
+
+        return $get_data->row(); //return row in reports table
+    }
+
+
 
 }
 

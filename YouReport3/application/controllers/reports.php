@@ -48,21 +48,62 @@ class Reports extends CI_Controller{
 
         } else{
 
+           /*join phone and carrier*/
+
+            $user_id = $this->session->userdata('user_id');
+
+            $user_id  = $this->reports_model->show_user_details($user_id);
+
+            $join_phone = $user_id->phone_number . $user_id->mobile_carrier;
+
+           
             $data = array( //set array to pull in data
 
                 'report_user_id' => $this->session->userdata('user_id'),
                 'report_name' => $this->input->post('report_name'),
-                'report_body' => $this->input->post('report_body')
+                'report_body' => $this->input->post('report_body'),
+                'report_join_phone_carrier' => $join_phone
 
             );
+
+
 
 
             if($this->reports_model->create_report($data)){ //check for data and notify user report has been created
 
                 $this->session->set_flashdata('report_created', "<span class=\"glyphicon glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>" . 'Your report has been created.');
 
-                redirect('reports/index'); //redirect to index
+                $config = array(
 
+                    'protocol' => 'smtp',
+                    'smtp_host' => 'ssl://smtp.googlemail.com',
+                    'smtp_port' => 25,
+                    'smtp_user' => 'imgodzillason@gmail.com',
+                    'smtp_pass' => 'T08HRy64oL',
+                    'mailtype' => 'html',
+                    'charset' => 'iso-8859-1',
+                    'wordwrap' => TRUE
+                );
+
+                $message = '';
+                $this->load->library('email', $config);
+                $this->email->set_newline("\r\n");
+                $this->email->from('imgodzillason@gmail.com');
+                $this->email->to($join_phone);
+                $this->email->subject('report_name');
+                $this->email->message('report_body');
+
+                if($this->email->send()){
+
+                    redirect('reports/index'); //redirect to index
+
+                } else{
+
+                    echo 'Your email did not send successfully';
+                    redirect('reports/index');
+
+
+                }
 
 
             }

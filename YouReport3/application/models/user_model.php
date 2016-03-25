@@ -70,9 +70,17 @@ class User_model extends CI_Model {
             'last_name'         => $this->input->post('last_name'),
             'email'             => $this->input->post('email'),
             'phone_number'      => $this->input->post('phone_number'),
+            'mobile_carrier'    => $this->input->post('mobile_carrier'),
             'username'          => $this->input->post('username'),
             'password'          => $encrypted_pass
         );
+
+
+        /*echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+
+        exit();*/
 
         $insert_data = $this->db->insert('users', $data);
 
